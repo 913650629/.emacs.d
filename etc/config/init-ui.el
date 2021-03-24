@@ -66,6 +66,12 @@
 (use-package lab-themes
   :ensure t)
 
+
+(use-package lazycat-theme
+  :quelpa (lazycat-theme
+            :fetcher github
+            :repo "manateelazycat/lazycat-theme"))
+
 ;; 自动切换主题
 (use-package circadian
   :ensure t
@@ -78,6 +84,7 @@
   ;; sunrise 白天用的主题 sunset 晚上用的主题
   (setq circadian-themes '((:sunrise . doom-one-light)
                            (:sunset . doom-one)))
+
   ;; 解决切换主题spaceline色块显示问题
   (add-hook 'circadian-after-load-theme-hook
 			#'(lambda (theme)
@@ -94,6 +101,28 @@
                 (highlight-indent-guides-mode -1)
                 (highlight-indent-guides-mode +1)))
   (circadian-setup))
+
+;; 配置状态栏
+(with-eval-after-load 'private-variable
+  ;; 隐藏mode-line
+  (use-package hide-mode-line
+    :if is-need-awesome-tray
+    :ensure t
+    :hook (after-init . global-hide-mode-line-mode))
+  ;; 懒猫的mode-line插件
+  (use-package awesome-tray
+    :if is-need-awesome-tray
+    :after hide-mode-line
+    :quelpa (awesome-tray
+             :fetcher github
+             :repo "manateelazycat/awesome-tray")
+    :config
+    (awesome-tray-mode 1)
+    (defun awesome-tray-meow-status ()
+      (meow-indicator))
+    (add-to-list 'awesome-tray-module-alist '("meow" . (awesome-tray-meow-status)))
+    (setq awesome-tray-active-modules '("meow" "git" "location" "parent-dir" "mode-name" "date"))))
+
 
 (use-package dashboard
   :ensure t
@@ -155,6 +184,7 @@
 
 ;; 彩虹猫进度条
 (use-package nyan-mode
+  :if (not (boundp 'awesome-tray-mode))
   :ensure t
   :hook (after-init . nyan-mode)
   :config
