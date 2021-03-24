@@ -67,12 +67,11 @@
   (add-to-list 'org-capture-templates '("b" "博客"))
   (add-to-list 'org-capture-templates '("s" "学习"))
   ;; 代码捕获模板
-  (push '("cb" "BUG" entry (file+headline "~/Documents/org/capture/code.org" "BUG")  "* [BUG] %^{BUG} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %T") org-capture-templates)
-  (push '("ci" "新事件" entry (file+headline "~/Documents/org/capture/code.org" "新事件")  "* [新事件] %^{新事件} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %T") org-capture-templates)
+  (push '("cb" "BUG" entry (file+headline "~/Documents/org/capture/code.org" "BUG")  "* [BUG] %^{BUG} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %?") org-capture-templates)
+  (push '("ci" "新事件" entry (file+headline "~/Documents/org/capture/code.org" "新事件")  "* [新事件] %^{新事件} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %?") org-capture-templates)
   ;; 学习捕获模板
-  (push '("ss" "学习" entry (file+headline "~/Documents/org/capture/study.org" "学习")  "* [学习] %^{学习} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %T") org-capture-templates)
-  (push '("st" "待办" entry (file+headline "~/Documents/org/capture/study.org" "待办") "* [待办] %^{待办} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %T") org-capture-templates)
-  (push '("sw" "完成" entry (file+healine "~/Documents/org/capture/study.org" "完成") "* [完成] %^{完成} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %T") org-capture-templates)
+  (push '("ss" "学习" entry (file+headline "~/Documents/org/capture/study.org" "学习")  "* [学习] %^{学习} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %?") org-capture-templates)
+  (push '("st" "待办" entry (file+headline "~/Documents/org/capture/study.org" "待办") "* [待办] %^{待办} \t%^g\n创建时间: %U\nSCHEDULED: %^T\nDEADLINE: %^T\n %?") org-capture-templates)
   ;; 博客捕获模板
   (push '("bj" "我的日志" entry (file+headline"~/Documents/site/org/diary.org" "日志") "* %U - %^{标题}\n  %?") org-capture-templates)
   (push '("bi" "我的闪念" entry (file+headline "~/Documents/site/org/idea.org" "闪念") "* %U - %^{标题} %^g\n  %?\n") org-capture-templates)
