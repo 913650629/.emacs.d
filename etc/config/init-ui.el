@@ -8,7 +8,15 @@
 ;; AUTHOR: EvanMeek the_lty_mail@foxmail.com
 
 ;;; Code:
-;; 解决Emacs在KDE下最大化出现间隙的问题
+;; 设置窗口之间的分割线
+(use-package window-divider-mode
+  :hook (after-init . window-divider-mode)
+  :custom
+  (window-divider-default-right-width 1)
+  (window-divider-default-bottom-width 1)
+  (window-divider-default-places t))
+
+; 解决Emacs在KDE下最大化出现间隙的问题
 (setq frame-resize-pixelwise t)
 ;; 设置光标颜色
 ;; (set-cursor-color "green2")
