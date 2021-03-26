@@ -147,7 +147,7 @@
   ;; (setq perspeen-use-tab t)
   (setq perspeen-keymap-prefix [C-tab]) 
   :config (perspeen-mode)
-  :custom-face (perspeen-selected-face ((t (::background "#68217A")))))
+  :custom-face (perspeen-selected-face ((t (:foreground "#68217A" :bold t)))))
 
 ;; 撤销树
 (use-package undo-tree 

@@ -125,11 +125,7 @@
              :fetcher github
              :repo "manateelazycat/awesome-tray")
     :config
-    (awesome-tray-mode 1)
-    (defun awesome-tray-meow-status ()
-      (meow-indicator))
-    (add-to-list 'awesome-tray-module-alist '("meow" . (awesome-tray-meow-status)))
-    (setq awesome-tray-active-modules '("meow" "git" "location" "parent-dir" "mode-name" "date"))))
+    (awesome-tray-mode 1)))
 
 
 (use-package dashboard

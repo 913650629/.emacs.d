@@ -58,6 +58,7 @@
         shackle-rules '(("*lsp-ui-imenu*" :align 'left :size 0.25)
                         (telega-chat-mode :align 'above :size 0.25)
                         (cargo-process-mode :align 'below :size 0.25 :select t)
-                        ("*rustfmt*" :ignore t))))
+                        ("*rustfmt*" :ignore t)
+                        ("*Messages*" :align 'below :size 0.25))))
 
 (provide 'init-window)
