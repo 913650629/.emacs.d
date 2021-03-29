@@ -119,6 +119,7 @@
   (add-to-list 'meow-normal-state-mode-list 'helpful-mode)
   (add-to-list 'meow-normal-state-mode-list  'Info-mode)
   (add-to-list 'meow-normal-state-mode-list 'cargo-process-mode)
+  (add-to-list 'meow-normal-state-mode-list 'sly-mrepl-mode)
   (global-set-key (kbd "s-SPC") meow-leader-keymap))
 
 

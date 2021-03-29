@@ -59,6 +59,7 @@
                         (telega-chat-mode :align 'above :size 0.25)
                         (cargo-process-mode :align 'below :size 0.25 :select t)
                         ("*rustfmt*" :ignore t)
-                        ("*Messages*" :align 'below :size 0.25))))
+                        ("*Messages*" :align 'below :size 0.25)
+                        (sly-db-mode :align 'below :size 0.5 :select t))))
 
 (provide 'init-window)

@@ -13,7 +13,7 @@
 
 ;; 著名的Emacs补全框架
 (use-package company 
-  :hook (prog-mode . company-mode) 
+  :hook ((prog-mode sly-mrepl-mode) . company-mode)
   :init (setq company-tooltip-align-annotations t company-idle-delay 0.1 company-echo-delay 0
               company-minimum-prefix-length 2 company-require-match nil company-dabbrev-ignore-case
               nil company-dabbrev-downcase nil company-show-numbers t) 

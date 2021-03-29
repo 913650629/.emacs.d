@@ -39,4 +39,15 @@
 (setq telega-completing-read-function 'ivy-completing-read)
 
 
+(use-package ivy-rich
+  :ensure t
+  :hook (after-init . ivy-rich-mode))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :after ivy-rich
+  :config
+  (all-the-icons-ivy-rich-mode 1))
+
+
 (provide 'init-ivy)

@@ -1,13 +1,8 @@
 (load (expand-file-name "init.el"))
 
-(setq +dump-exclude-packages '(telega
-                               hydra-posframe
-                               dap-mode
-                               vterm
-                               rime
+(setq +dump-exclude-packages '(vterm
                                fuz
-                               emacs-application-framework
-                               undo-tree))
+                               emacs-application-framework))
 
 
 (dolist (package package-activated-list)

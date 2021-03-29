@@ -6,7 +6,7 @@
 ;; 括号匹配
 (use-package smartparens
   :ensure t 
-  :hook (prog-mode . smartparens-mode))
+  :hook (prog-mode . smartparens-global-mode))
 
 ;; Emacs下telegram的客户端，默认不开启
 (use-package telega
