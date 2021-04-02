@@ -56,10 +56,13 @@
         shackle-default-alignment 'below
         shackle-default-rule t
         shackle-rules '(("*lsp-ui-imenu*" :align 'left :size 0.25)
-                        (telega-chat-mode :align 'above :size 0.25)
+                        (telega-chat-mode :align 'above :size 0.25 :select t)
                         (cargo-process-mode :align 'below :size 0.25 :select t)
+                        ("**compilation*" :align 'below :size 0.25 :select t)
                         ("*rustfmt*" :ignore t)
                         ("*Messages*" :align 'below :size 0.25)
-                        (sly-db-mode :align 'below :size 0.5 :select t))))
+                        (sly-db-mode :align 'below :size 0.5 :select t)
+                        (compilation-mode :align 'below :size 0.2 :ignore t)
+                        )))
 
 (provide 'init-window)
