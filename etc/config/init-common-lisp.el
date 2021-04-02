@@ -1,5 +1,6 @@
 (defvar inferior-lisp-program "/usr/bin/sbcl")
 
+
 ;; (use-package slime
 ;;   :ensure t)
 
@@ -14,7 +15,9 @@
 (use-package sly-repl-ansi-color
   :ensure t
   :hook (common-lisp-mode . sly-repl-ansi-color))
+
 (use-package sly-quicklisp
-  :ensure t)
+  :ensure t
+  :after common-lisp-mode)
 
 (provide 'init-common-lisp)
