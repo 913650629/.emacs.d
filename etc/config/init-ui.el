@@ -125,8 +125,14 @@
              :fetcher github
              :repo "manateelazycat/awesome-tray")
     :config
-    (awesome-tray-mode 1)))
-
+    (awesome-tray-mode 1))
+  (use-package awesome-tab
+  :if is-need-awesome-tab
+  :quelpa (awesome-tab
+           :fetcher github
+           :repo "manateelazycat/awesome-tab")
+  :config
+  (awesome-tab-mode t)))
 
 (use-package dashboard
   :ensure t

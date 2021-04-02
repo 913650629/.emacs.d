@@ -31,7 +31,8 @@
      '("p" . evan/hydra-project-menu/body)
      '("g" . evan/hydra-common-menu/body)
      '("a" . evan/hydra-app-menu/body)
-     '("w" . evan/hydra-window-menu/body))
+     '("w" . evan/hydra-window-menu/body)
+     '("r" . evan/awesome-fast-switch/body))
     (meow-normal-define-key
      '("0" . meow-expand-0)
      '("9" . meow-expand-9)
@@ -120,6 +121,7 @@
   (add-to-list 'meow-normal-state-mode-list  'Info-mode)
   (add-to-list 'meow-normal-state-mode-list 'cargo-process-mode)
   (add-to-list 'meow-normal-state-mode-list 'sly-mrepl-mode)
+  (add-to-list 'meow-normal-state-mode-list 'erc-mode)
   (global-set-key (kbd "s-SPC") meow-leader-keymap))
 
 

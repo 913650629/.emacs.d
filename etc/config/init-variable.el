@@ -31,6 +31,8 @@
  is-need-meow-module nil
  ;; 是否需要启用awesome-tray
  is-need-awesome-tray nil
+ ;; 是否需要启用awesome-tab
+ is-need-awesome-tab nil
  ;; 用于恢复字体大小的变量
  original-zh-font-size evan/zh-font-size
  original-en-font-size evan/en-font-size

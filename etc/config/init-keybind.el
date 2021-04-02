@@ -197,12 +197,38 @@
 ;;   ("l" tab-bar-switch-to-next-tab "next bar" :color red)
 ;;   ("h" tab-bar-switch-to-prev-tab "prev bar" :color red))
 
+(defhydra evan/awesome-fast-switch (:hint nil)
+     "
+ ^^^^Fast Move             ^^^^Tab                    ^^Search            ^^Misc
+-^^^^--------------------+-^^^^---------------------+-^^----------------+-^^---------------------------
+   ^_k_^   prev group    | _C-a_^^     select first | _b_ search buffer | _C-k_   kill buffer
+ _h_   _l_  switch tab   | _C-e_^^     select last  | _g_ search group  | _C-S-k_ kill others in group
+   ^_j_^   next group    | _C-j_^^     ace jump     | ^^                | ^^
+ ^^0 ~ 9^^ select window | _C-h_/_C-l_ move current | ^^                | ^^
+-^^^^--------------------+-^^^^---------------------+-^^----------------+-^^---------------------------
+"
+     ("h" awesome-tab-backward-tab)
+     ("j" awesome-tab-forward-group)
+     ("k" awesome-tab-backward-group)
+     ("l" awesome-tab-forward-tab)
+     ("C-a" awesome-tab-select-beg-tab)
+     ("C-e" awesome-tab-select-end-tab)
+     ("C-j" awesome-tab-ace-jump)
+     ("C-h" awesome-tab-move-current-tab-to-left)
+     ("C-l" awesome-tab-move-current-tab-to-right)
+     ("b" ivy-switch-buffer)
+     ("g" awesome-tab-counsel-switch-group)
+     ("C-k" kill-current-buffer)
+     ("C-S-k" awesome-tab-kill-other-buffers-in-current-group)
+     ("q" nil "quit"))
+
 ;; 主菜单
 (defhydra evan/hydra-main-menu ()
   "
 					^主菜单^
 [_b_] ^音乐^	[_o_] ^开启^ 	[_t_] ^开关^ 	[_w_] ^窗格^
 [_c_] ^代码^	[_p_] ^项目^ 	[_a_] ^应用^ 	[_2_] ^常用^
+[_r_] ^Awesome-Tab^
 "
   ;; [_T_] ^Tab-Bar^
   ("b" evan/hydra-music-menu/body nil :color blue)
@@ -213,9 +239,11 @@
   ("p" evan/hydra-project-menu/body nil :color blue)
   ("2" evan/hydra-common-menu/body nil :color blue)
   ("a" evan/hydra-app-menu/body nil :color blue)
+  ("r" evan/awesome-fast-switch/body :color blue)
   ;; ("T" evan/hydra-tab-bar-menu/body nil :color blue)
   ("q" nil "QUIT" :color blue))
 
 (global-set-key (kbd "M-\\") #'evan/hydra-main-menu/body)
+
 
 (provide 'init-keybind)
