@@ -18,7 +18,7 @@
 (use-package scss-mode
   :ensure t
   :init
-  (setq scss-compile-at-save nil))
+  (setq scss-compile-at-save t))
 
 ;; ;; (unless (fboundp 'less-css-mode)
 ;; ;;   (use-package less-css-mode
@@ -32,9 +32,31 @@
 
 (use-package prettier-js
   :ensure t
-  :hook ((js-mode js2-mode json-mode web-mode css-mode sgml-mode html-mode)
+  :hook ((;; js-mode js2-mode 
+                  json-mode ;; web-mode
+                            css-mode sgml-mode ;; html-mode
+                            )
          .
          prettier-js-mode))
+
+;; Vue support
+(use-package vue-mode
+  :mode "\\.vue\\'"
+  :config
+  (add-hook 'vue-mdoe-hook #'lsp))
+
+
+
+;; typescript support
+(use-package typescript-mode
+  :ensure t
+  :mode "\\.ts\\'")
+
+(use-package tide
+  :ensure t
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
 
 
 
