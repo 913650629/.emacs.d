@@ -54,9 +54,13 @@ WAY是方向，可选值为p,n,f,b，分别对应上下左右
 
 
 
-(push '(defun open-with-chrome () 
-		 (interactive) 
-		 (browse-url-chrome (buffer-file-name)))
+(push '(progn
+         (defun open-with-chrome () 
+		   (interactive) 
+		   (browse-url-chrome (buffer-file-name)))
+         (defun open-with-firefox ()
+           (interactive)
+           (browse-url-firefox (buffer-file-name))))
 	  graphic-only-plugins-setting)
 
 ;; 切换代理

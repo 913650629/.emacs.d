@@ -17,7 +17,7 @@
                          :port "1088"
                          :enable t 
                          :type (:@type "proxyTypeSocks5")))
-              telega-chat-show-avatars t) 
+              telega-chat-show-avatars nil) 
   (setq telega-chat-fill-column 65) 
   (setq telega-emoji-use-images t)
   :config

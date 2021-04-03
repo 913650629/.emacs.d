@@ -43,20 +43,24 @@
 (use-package vue-mode
   :mode "\\.vue\\'"
   :config
-  (add-hook 'vue-mdoe-hook #'lsp))
+  (add-hook 'vue-mdoe-hook #'lsp)
+  (setq lsp-eslint-enable nil))
 
 
 
 ;; typescript support
 (use-package typescript-mode
   :ensure t
-  :mode "\\.ts\\'")
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . flycheck-mode))
 
 (use-package tide
   :ensure t
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (before-save . tide-format-before-save))
+  :config
+  (tide-auto-compile-file))
 
 
 

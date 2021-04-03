@@ -8,4 +8,7 @@
   :config
   (ranger-override-dired-mode 1))
 
+(use-package dired
+  :hook (dired-mode . dired-hide-details-mode))
+
 (provide 'init-dired)
