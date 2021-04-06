@@ -28,13 +28,16 @@
 ;; 		 :load-path "~/.emacs.d/site-lisp/hydra-posframe"
 ;; 		 :hook (after-init . hydra-posframe-mode)) graphic-only-plugins-setting)
 
-(use-package
-  hydra-posframe
-  :quelpa ((hydra-posframe
-            :fetcher github
-            :repo "Ladicle/hydra-posframe"))
-  :hook (after-init . (lambda ()
-                        (hydra-posframe-mode +1) ) ))
+(push '(progn
+         (use-package
+           hydra-posframe
+           :quelpa ((hydra-posframe
+                     :fetcher github
+                     :repo "Ladicle/hydra-posframe"))
+           :hook (after-init . (lambda ()
+                                 (hydra-posframe-mode +1)))))
+      graphic-only-plugins-setting)
+
 
 (use-package
   major-mode-hydra
