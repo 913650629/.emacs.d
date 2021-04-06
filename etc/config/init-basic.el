@@ -22,6 +22,7 @@
 (setq eshell-history-file-name "~/.emacs.d/var/eshell/history")
 (setq recentf-save-file "~/.emacs.d/var/recentf")
 (setq recentf-max-menu-items 20)
+(setq x-select-enable-clipboard t)
 (set-default 'truncate-lines t)
 ;; 设置默认模式
 ;; (add-hook 'after-init-hook (lambda ()
@@ -280,6 +281,11 @@
   :config
   (setq auto-save-slient t)
   (auto-save-enable))
+
+;; xorg剪贴板工具
+(use-package xclicp
+  :ensure t
+  :hook (after-init . xclicp-mode))
 
 (cd "~/.emacs.d/")
 
