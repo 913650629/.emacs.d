@@ -8,6 +8,7 @@
 ;; EMAIL	: the_lty_mail@foxmail.com
 (defvar +dumped-load-path nil
   "Not nil when using dump.")
+(setq is-graphic-p nil)
 
 ;; 图形界面插件的设置
 (setq graphic-only-plugins-setting ()) 
