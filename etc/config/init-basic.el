@@ -283,9 +283,9 @@
   (auto-save-enable))
 
 ;; xorg剪贴板工具
-(use-package xclicp
+(use-package xclip
   :ensure t
-  :hook (after-init . xclicp-mode))
+  :hook (after-init . xclip-mode))
 
 (cd "~/.emacs.d/")
 

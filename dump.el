@@ -2,6 +2,7 @@
 
 (setq +dump-exclude-packages '(vterm
                                fuz
+                               eaf
                                emacs-application-framework))
 
 
