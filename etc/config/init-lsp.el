@@ -4,7 +4,7 @@
   :defer 2
   :init (setq lsp-keymap-prefix "s-g")
   :commands (lsp)
-  :hook (((java-mode js-mode js2-mode web-mode scss-mode c-mode c++-mode objc-mode python-mode rust-mode) . lsp)
+  :hook (((java-mode web-mode scss-mode c-mode c++-mode objc-mode python-mode rust-mode) . lsp)
          (lsp-mode . (lambda ()
                        (lsp-enable-which-key-integration))))
   :custom

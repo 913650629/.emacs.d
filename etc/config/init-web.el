@@ -25,10 +25,12 @@
 ;; ;; 	:ensure nil))
 
 ;; ;; 写js可用的模式
-(use-package js2-mode 
-  :mode (("\\.js\\'" . js2-mode)
-		 ("\\.jsx\\'" . js2-jsx-mode))
-  :ensure t)
+;; (use-package js2-mode 
+;;   :mode (("\\.js\\'" . js2-mode)
+;; 		 ("\\.jsx\\'" . js2-jsx-mode))
+;;   :ensure t)
+(use-package js-mode
+  :mode (("\\.js\\'" . js-mode)))
 
 (use-package prettier-js
   :ensure t
@@ -56,7 +58,8 @@
 
 (use-package tide
   :ensure t
-  :hook ((typescript-mode . tide-setup)
+  :hook ((js-mode . tide-setup)
+         (typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save))
   :config
