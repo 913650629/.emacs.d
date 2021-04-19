@@ -63,6 +63,7 @@
                         ("*Messages*" :align 'below :size 0.25)
                         (sly-db-mode :align 'below :size 0.5 :select t)
                         (compilation-mode :align 'below :size 0.2 :ignore t)
+                        ("quickrun" :ignore t)
                         )))
 
 (provide 'init-window)

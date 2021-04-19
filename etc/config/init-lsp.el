@@ -51,7 +51,9 @@
                          (lsp)))
   :init
   (when (executable-find "python3")
-    (setq lsp-pyright-python-executable-cmd "python3")))  ; or lsp-deferred
+    (setq lsp-pyright-python-executable-cmd "python3"))
+  :custom
+  (lsp-pyright-use-library-code-for-types t))  ; or lsp-deferred
 
 ;; 美化lsp-mode
 (use-package 

@@ -9,7 +9,12 @@
 (dolist (package package-activated-list)
   (unless (member package +dump-exclude-packages)
     (require 'doom-one-theme)
+    (require 'kaolin-mono-light)
+    (require 'nimbus-theme)
     (require 'doom-one-light-theme)
+    (require 'lazycat-light-theme)
+    (require 'lazycat-theme)
+    (require 'lazycat-dark-theme)
     (require package)))
 
 (setq +dumped-load-path load-path)
