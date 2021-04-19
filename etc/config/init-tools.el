@@ -237,7 +237,7 @@
 (use-package disable-mouse
   :ensure t
   :hook (after-init . (lambda ()
-						(global-disable-mouse-mode -1))))
+						(global-disable-mouse-mode 1))))
 ;; 管理生词工具-本配置文件作者写的插件
 (use-package shengci
   :quelpa ((shengci :fetcher github :repo "EvanMeek/shengci.el")))
