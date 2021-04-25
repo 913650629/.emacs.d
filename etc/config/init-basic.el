@@ -251,25 +251,6 @@
   :ensure t
   :hook ('prog-mode . 'global-hungry-delete-mode))
 
-;; 相对行号，默认未开启
-;; (use-package linum-relative
-;;   :ensure t
-;;   :disabled
-;;   :hook ('prog-mode . 'linum-relative-mode))
-
-;; 更好的显示行号
-;; (use-package nlinum
-;;   :ensure t
-;;   :hook (after-init . global-nlinum-mode))
-
-;; ;; 高亮当前行行号
-;; (use-package hlinum
-;;   :ensure t
-;;   :defines nlinum-highlight-current-line
-;;   :custom-face (nlinum-highlight-face ((t (:inherit default :background nil :foreground nil))))
-;;   :hook (global-nlinum-mode . hlinum-activate))
-                                        ; 默认目录为~/.emacs.d/
-
 ;;; 利用avy跳转链接
 (use-package link-hint
   :ensure t
@@ -287,6 +268,7 @@
   :ensure t
   :hook (after-init . xclip-mode))
 
+;; 默认目录为~/.emacs.d/
 (cd "~/.emacs.d/")
 
 (provide 'init-basic)

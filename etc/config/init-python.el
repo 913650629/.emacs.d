@@ -1,9 +1,8 @@
 ;; Python
 (use-package 
   python 
-  :ensure t 
-  :hook (inferior-python-mode . (lambda () 
-                                  (process-query-on-exit-flag (get-process "Python")))) 
+  :ensure t
+  :mode ("\\.py\\'" . python-mode)
   :init
   ;; Disable readline based native completion
   (setq python-shell-completion-native-enable nil) 
@@ -18,7 +17,6 @@
   ;; Live Coding in Python
   (use-package python-black
 	:ensure t
-    :after python
 	:hook (python-mode . python-black-on-save-mode)))
 
 (use-package elpy

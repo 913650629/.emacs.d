@@ -1,9 +1,11 @@
 ;; 交互式Git工具
 (use-package magit
   :ensure t
+  :defer 2
   :init
   (use-package with-editor
-    :ensure t))
+    :ensure t
+    :after after-init-hook))
 
 ;; 显示当前行修改-Git
 (use-package git-gutter-fringe

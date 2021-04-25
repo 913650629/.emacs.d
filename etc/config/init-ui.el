@@ -81,7 +81,8 @@
             :repo "manateelazycat/lazycat-theme"))
 
 ;; 自动切换主题
-(use-package circadian
+(with-eval-after-load 'private-variable
+  (use-package circadian
   :ensure t
   :hook ('after-make-frame-functions . (lambda ()
                                          (circadian-setup)))
@@ -89,9 +90,6 @@
   ;; 经纬度，可以在https://www.latlong.net/获取，默认是广州的
   (setq calendar-latitude 23.130280
 		calendar-longitude 113.288879)
-  ;; sunrise 白天用的主题 sunset 晚上用的主题
-  (setq circadian-themes '((:sunrise . doom-one-light)
-                           (:sunset . doom-one)))
 
   ;; 解决切换主题spaceline色块显示问题
   (add-hook 'circadian-after-load-theme-hook
@@ -108,7 +106,8 @@
                 (centaur-tabs-mode +1)
                 (highlight-indent-guides-mode -1)
                 (highlight-indent-guides-mode +1)))
-  (circadian-setup))
+  (circadian-setup)))
+
 
 ;; 配置状态栏
 (with-eval-after-load 'private-variable

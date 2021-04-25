@@ -1,5 +1,4 @@
-(use-package 
-  org
+(use-package org
   :defer 2
   :ensure t
   :bind

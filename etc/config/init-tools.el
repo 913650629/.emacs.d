@@ -164,8 +164,8 @@
 
 ;; 快速查询你的问题
 (use-package howdoyou
-  :quelpa nil
-  :ensure t)
+  :ensure t
+  :commands (howdoyou))
 
 ;; emacs内置网页浏览器
 (use-package eww
@@ -238,8 +238,10 @@
   :ensure t
   :hook (after-init . (lambda ()
 						(global-disable-mouse-mode 1))))
+
 ;; 管理生词工具-本配置文件作者写的插件
 (use-package shengci
+  :ensure t
   :quelpa ((shengci :fetcher github :repo "EvanMeek/shengci.el")))
 
 (provide 'init-tools)
