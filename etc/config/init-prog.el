@@ -51,4 +51,9 @@
       (:remove  . ("%e")))
 	:default "c++"))
 
+;; 将文档插入代码中
+(use-package docstr
+  :ensure t
+  :hook (prog-mode . docstr-mode))
+
 (provide 'init-prog)

@@ -268,6 +268,11 @@
   :ensure t
   :hook (after-init . xclip-mode))
 
+;; so-long
+(use-package so-long
+  :config
+  (push '(read-only-mode ) so-long-variable-overrides))
+
 ;; 默认目录为~/.emacs.d/
 (cd "~/.emacs.d/")
 
