@@ -52,11 +52,11 @@
 
     (advice-add #'keyboard-quit :before #'shackle-close-popup-window-hack)
     (advice-add #'shackle-display-buffer :around #'shackle-display-buffer-hack))
-  (setq shackle-default-size 0.4
-        shackle-default-alignment 'below
+  (setq ;; shackle-default-size 0.4
+        ;; shackle-default-alignment 'right
         shackle-default-rule t
         shackle-rules '(("*lsp-ui-imenu*" :align 'left :size 0.25)
-                        (telega-chat-mode :align 'above :size 0.25 :select t)
+                        (telega-chat-mode :align 'right :size 0.45 :select t)
                         (cargo-process-mode :align 'below :size 0.25 :select t)
                         ("**compilation*" :align 'below :size 0.25 :select t)
                         ("*rustfmt*" :ignore t)

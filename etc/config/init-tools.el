@@ -242,6 +242,9 @@
 ;; 管理生词工具-本配置文件作者写的插件
 (use-package shengci
   :ensure t
-  :quelpa ((shengci :fetcher github :repo "EvanMeek/shengci.el")))
+  :quelpa (shengci
+           :fetcher github
+           :repo "EvanMeek/shengci.el"
+           :files "*.el"))
 
 (provide 'init-tools)

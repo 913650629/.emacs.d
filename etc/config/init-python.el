@@ -16,8 +16,7 @@
   (with-eval-after-load 'exec-path-from-shell (exec-path-from-shell-copy-env "PYTHONPATH"))
   ;; Live Coding in Python
   (use-package python-black
-	:ensure t
-	:hook (python-mode . python-black-on-save-mode)))
+	:ensure t))
 
 (use-package elpy
   :disabled

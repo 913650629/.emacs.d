@@ -31,9 +31,9 @@
 (push '(progn
          (use-package
            hydra-posframe
-           :quelpa ((hydra-posframe
+           :quelpa (hydra-posframe
                      :fetcher github
-                     :repo "Ladicle/hydra-posframe"))
+                     :repo "Ladicle/hydra-posframe")
            :hook (after-init . (lambda ()
                                  (hydra-posframe-mode +1)))))
       graphic-only-plugins-setting)
