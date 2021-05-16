@@ -9,7 +9,7 @@
 (dolist (package package-activated-list)
   (unless (member package +dump-exclude-packages)
     (require 'doom-one-theme)
-    (require 'kaolin-mono-light)
+    (require 'kaolin-mono-light-theme)
     (require 'nimbus-theme)
     (require 'doom-one-light-theme)
     (require 'lazycat-light-theme)

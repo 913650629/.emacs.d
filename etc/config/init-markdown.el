@@ -9,10 +9,10 @@
 
 ;; CODE:
 (use-package
-  markdown-mode+
+  markdown-mode
   :defer t
   :ensure t
-  :hook (markdown-mode . (lambda () (require 'markdown-mode+)))
+  :hook (markdown-mode . (lambda () (require 'markdown-mode)))
   :config
   (if (fontp (font-spec :name evan/en-font-name
 						:style evan/en-font-style

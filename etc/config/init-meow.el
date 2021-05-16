@@ -117,11 +117,11 @@
           (keypad . "KEYPAD")
           (motion . "MOTION")))
   ;; 添加指定模式到normal模式列表
-  (add-to-list 'meow-normal-state-mode-list 'helpful-mode)
-  (add-to-list 'meow-normal-state-mode-list  'Info-mode)
-  (add-to-list 'meow-normal-state-mode-list 'cargo-process-mode)
-  (add-to-list 'meow-normal-state-mode-list 'sly-mrepl-mode)
-  (add-to-list 'meow-normal-state-mode-list 'erc-mode)
+  ;;(add-to-list 'meow-normal-state-mode-list 'helpful-mode)
+  ;;(add-to-list 'meow-normal-state-mode-list  'Info-mode)
+  ;;(add-to-list 'meow-normal-state-mode-list 'cargo-process-mode)
+  ;;(add-to-list 'meow-normal-state-mode-list 'sly-mrepl-mode)
+  ;;(add-to-list 'meow-normal-state-mode-list 'erc-mode)
   (global-set-key (kbd "s-SPC") meow-leader-keymap))
 
 

@@ -75,22 +75,22 @@
 ;;;;;;;;;;;;
 ;; Python ;;
 ;;;;;;;;;;;;
-(require 'init-python)
+;;(require 'init-python)
 
 ;;;;;;;;;;
 ;; Java ;;
 ;;;;;;;;;;
-(require 'init-java)
+;;(require 'init-java)
 
 ;;;;;;;;;;;
 ;; C/C++ ;;
 ;;;;;;;;;;;
-(require 'init-cc)
+;;(require 'init-cc)
 
 ;;;;;;;;;
 ;; Lua ;;
 ;;;;;;;;;
-(require 'init-lua)
+;;(require 'init-lua)
 
 ;;;;;;;;;;;
 ;; ELisp ;;
@@ -115,7 +115,7 @@
 ;;;;;;;;;;
 ;; Rust ;;
 ;;;;;;;;;;
-(require 'init-rust)
+;;(require 'init-rust)
 
 ;;;;;;;;;
 ;; Web ;;
@@ -145,7 +145,7 @@
 ;;;;;;;;;;
 ;; meow ;;
 ;;;;;;;;;;
-(require 'init-meow)
+;;(require 'init-meow)
 
 ;;;;;;;;;;
 ;; Hack ;;

@@ -244,7 +244,7 @@
   :ensure t
   :quelpa (shengci
            :fetcher github
-           :repo "EvanMeek/shengci.el"
-           :files "*.el"))
+           :repo "EvanMeek/shengci.el"))
+;;           :files "*.el"))
 
 (provide 'init-tools)

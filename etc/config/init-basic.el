@@ -261,6 +261,7 @@
   :quelpa ((auto-save :fetcher github :repo "manateelazycat/auto-save"))
   :config
   (setq auto-save-slient t)
+  (setq auto-save-idle 60)
   (auto-save-enable))
 
 ;; xorg剪贴板工具
