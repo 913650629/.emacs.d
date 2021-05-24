@@ -101,7 +101,7 @@
      (push '("sa" "技能学习" entry (file+headline "~/Documents/org/study.org" "技能列表") "* [待学习] %^{技能名} \t%^g\n创建时间: %U\n %?\n") org-capture-templates)     
      (push '("tc" "完整待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} \t%^g%?\n创建时间: %U\n开始时间: %^t\n截至时间: %^t\n") org-capture-templates)
      (push '("tt" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n创建时间: %U\n") org-capture-templates)
-     (push '("td" "今日待办" entry (file+datetree "~/Documents/org/day.org") "* 今日总结\n1. \n* 今日待办\n** [今日待办] %^{今日待办}\n %?\n") org-capture-templates))
+     (push '("td" "今日待办" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n上午：\n下午：\n* 今日待办\n** [今日待办] %^{今日待办}\n %?\n") org-capture-templates))
 
 (use-package org-agenda
   :after org
