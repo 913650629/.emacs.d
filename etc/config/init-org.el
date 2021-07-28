@@ -9,9 +9,7 @@
   :custom
   (org-todo-keywords '(                      
                        (sequence "[今日待办](t)" "[急事](1)" "[要事](2)" "[烦事](3)" "[杂事](4)" "[待办](T!)" "|" "[完成](d)")
-                       (sequence "[正式考试](z)" "[模拟考试](m)" "|" "[完成](d)")
-                       (sequence "[学习中](s)" "|" "[完成](d)")
-                       (sequence "[整理中](e)" "|" "[完成](d)")                                              
+                       (sequence "[上午](m)" "[下午](a)" "|" "[完成](d)")
                        ))
   :config
   (setq org-todo-keyword-faces '(
@@ -22,10 +20,8 @@
                                  ("[杂事]" . (:foreground "black" :background "#ECAD9E" :weight bold))
 								 ("[待办]" . (:foreground "black" :background "#D1BA74" :weight bold))
 								 ("[完成]" . (:foreground "black" :background "#AEDD81" :weight bold))
-								 ("[模拟考试]" . (:foreground "black" :background "#EB7347" :weight bold))
-								 ("[正式考试]" . (:foreground "black" :background "#D24D57" :weight bold))
-								 ("[整理中]" . (:foreground "black" :background "#ECAD9E" :weight bold))                                 
-								 ("[学习中]" . (:foreground "black" :background "#ECAD9E" :weight bold))))
+								 ("[上午]" . (:foreground "black" :background "#EB7347" :weight bold))
+								 ("[下午]" . (:foreground "black" :background "#D24D57" :weight bold))))
   (defun evan/capture-word ()
 	(interactive)
 	(setq-local capture-word-item nil)
@@ -69,17 +65,11 @@
   ;; (push "~/Documents/org/capture/task.org" org-agenda-files)
   ;; (setq org-time-stamp-formats '("<%Y-%m-%d 周%u %H:%M>"))
 
-   (add-to-list 'org-capture-templates '("e" "考试"))
-   (add-to-list 'org-capture-templates '("s" "学习"))
-   (add-to-list 'org-capture-templates '("t" "待办"))   
+;;   (add-to-list 'org-capture-templates '("t" "待办"))   
    ;; 代码捕获模板
-     (push '("ee" "考试笔记" entry (file+headline "~/Documents/org/exam.org" "考试笔记") "* %^{科目名} \t%^g\n创建时间: %U\n** [整理中] %^{整理章节}\n %?\n") org-capture-templates)
-     (push '("et" "模拟考试" entry (file+headline "~/Documents/org/exam.org" "考试列表") "* [模拟考试] %^{试卷名} \t%^g\n创建时间: %U\n开始时间: %^t\n %?\n") org-capture-templates)
-     (push '("er" "正式考试" entry (file+headline "~/Documents/org/exam.org" "考试列表") "* [正式考试] %^{试卷名} \t%^g\n创建时间: %U\n开始时间: %^t\n %?\n") org-capture-templates)
-     (push '("ss" "学习笔记" entry (file+headline "~/Documents/org/study.org" "学习笔记") "* %^{技能名} \t%^g\n创建时间: %U\n** [学习中] %^{学习章节}\n %?\n") org-capture-templates)
-     (push '("tc" "完整待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} \t%^g%?\n创建时间: %U\n开始时间: %^t\n截至时间: %^t\n") org-capture-templates)
-     (push '("tt" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n创建时间: %U\n") org-capture-templates)
-     (push '("td" "今日待办" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n上午：\n下午：\n* 今日待办\n** [今日待办] %^{今日待办}\n %?\n") org-capture-templates))
+     (push '("c" "计划" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} %?\n  创建时间: %U\n  开始时间: %^t\n  截至时间: %^t") org-capture-templates)
+     (push '("t" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n  创建时间: %U") org-capture-templates)
+     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [上午] 9:00-11:30\n\t 上午至多4个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n** [下午] 13:20-18:00\n\t 下午至多7个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n\t- [ ] 整理x\n* 今日待办\n** [今日待办] %^{今日待办}") org-capture-templates))
 
 (use-package org-agenda
   :after org
@@ -92,8 +82,8 @@
         `(
           ;; 学习相关
           ("待办" ,(evan/agenda-icon-material "check_box") nil nil :ascent center)
-          ("学习" ,(evan/agenda-icon-material "book") nil nil :ascent center)
-          ("等待" ,(evan/agenda-icon-material "ac_unit") nil nil :ascent center)
+          ("计划" ,(evan/agenda-icon-material "book") nil nil :ascent center)
+          ("今日" ,(evan/agenda-icon-material "ac_unit") nil nil :ascent center)
           ("完成" ,(evan/agenda-icon-material "done") nil nil :ascent center)
           ;; 代码相关
           ("取消" ,(evan/agenda-icon-material "cancel") nil nil :ascent)
