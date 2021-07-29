@@ -9,7 +9,7 @@
   :custom
   (org-todo-keywords '(                      
                        (sequence "[今日待办](t)" "[急事](1)" "[要事](2)" "[烦事](3)" "[杂事](4)" "[待办](T!)" "|" "[完成](d)")
-                       (sequence "[上午](m)" "[下午](a)" "|" "[完成](d)")
+                       (sequence "[上午](m)" "[下午](a)" "[晚间](n)" "|" "[完成](d)")
                        ))
   :config
   (setq org-todo-keyword-faces '(
@@ -21,7 +21,8 @@
 								 ("[待办]" . (:foreground "black" :background "#D1BA74" :weight bold))
 								 ("[完成]" . (:foreground "black" :background "#AEDD81" :weight bold))
 								 ("[上午]" . (:foreground "black" :background "#EB7347" :weight bold))
-								 ("[下午]" . (:foreground "black" :background "#D24D57" :weight bold))))
+								 ("[下午]" . (:foreground "black" :background "#D24D57" :weight bold))
+                                 ("[晚间]" . (:foreground "black" :background "#E6CEAC" :weight bold))))
   (defun evan/capture-word ()
 	(interactive)
 	(setq-local capture-word-item nil)
@@ -69,7 +70,7 @@
    ;; 代码捕获模板
      (push '("c" "计划" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} %?\n  创建时间: %U\n  开始时间: %^t\n  截至时间: %^t") org-capture-templates)
      (push '("t" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n  创建时间: %U") org-capture-templates)
-     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [上午] 9:00-11:30\n\t 上午至多4个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n** [下午] 13:20-18:00\n\t 下午至多7个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n\t- [ ] 整理x\n** [下午] 19:00-23:30\n\t 晚上至多7个番茄\n\t- [ ] 运动x\n\t- [ ] 学习x\n\t- [ ] 休闲x\n\t- [ ] 读书x\n\t- [ ] 生活x\n* 今日待办\n** [今日待办] %^{今日待办}") org-capture-templates))
+     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [上午] 9:00-11:30\n\t 上午至多4个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n** [下午] 13:20-18:00\n\t 下午至多7个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n\t- [ ] 整理x\n** [晚间] 19:00-23:30\n\t 晚上至多7个番茄\n\t- [ ] 运动x\n\t- [ ] 休闲x\n\t- [ ] 生活x\n\t- [ ] 学习x\n\t- [ ] 读书x\n* 今日待办\n** [今日待办] %^{今日待办}") org-capture-templates))
 
 (use-package org-agenda
   :after org
