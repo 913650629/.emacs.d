@@ -70,7 +70,7 @@
    ;; 代码捕获模板
      (push '("c" "计划" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} %?\n  创建时间: %U\n  开始时间: %^t\n  截至时间: %^t") org-capture-templates)
      (push '("t" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n  创建时间: %U") org-capture-templates)
-     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [上午] 9:00-11:30\n   上午至多4个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n** [下午] 13:20-18:00\n   下午至多7个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n\t- [ ] 整理x\n** [晚间] 19:00-23:30\n   晚上至多7个番茄\n\t- [ ] 运动x\n\t- [ ] 休闲x\n\t- [ ] 生活x\n\t- [ ] 学习x\n\t- [ ] 读书x\n* 今日待办\n** [今日待办] %^{今日待办}") org-capture-templates))
+     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [上午] 9:00-11:30\n   上午至多4个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n** [下午] 13:20-18:00\n   下午至多7个番茄\n\t- [ ] 学习x\n\t- [ ] 工作x\n\t- [ ] 整理x\n** [晚间] 19:00-23:30\n   晚上至多7个番茄,休闲与运动二选一\n\t- [ ] 运动x\n\t- [ ] 休闲x\n\t- [ ] 生活x\n\t- [ ] 学习x\n\t- [ ] 读书x\n* 今日待办\n** [今日待办] %^{今日待办}") org-capture-templates))
 
 (use-package org-agenda
   :after org
