@@ -8,12 +8,13 @@
   ("M-L" . 'org-shiftmetaright)
   :custom
   (org-todo-keywords '(                      
-                       (sequence "[今日待办](t)" "[急事](1)" "[要事](2)" "[烦事](3)" "[杂事](4)" "[待办](T!)" "|" "[完成](d)")
+                       (sequence "[今日待办](t)" "[假期待办](x)" "[急事](1)" "[要事](2)" "[烦事](3)" "[杂事](4)" "[待办](T!)" "|" "[完成](d)")
                        (sequence "[上午](m)" "[下午](a)" "[晚间](n)" "|" "[完成](d)")
                        ))
   :config
   (setq org-todo-keyword-faces '(
 								 ("[今日待办]" . (:foreground "black" :background "#D6D5B7" :weight bold))
+                                 ("[假期待办]" . (:foreground "black" :background "#D6D5B7" :weight bold))
 								 ("[急事]" . (:foreground "black" :background "#F4606C" :weight bold))
 								 ("[要事]" . (:foreground "black" :background "#EB7347" :weight bold))
                                  ("[烦事]" . (:foreground "black" :background "#FC9D99" :weight bold))
@@ -70,7 +71,8 @@
    ;; 代码捕获模板
      (push '("c" "计划" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事} %?\n  创建时间: %U\n  开始时间: %^t\n  截至时间: %^t") org-capture-templates)
      (push '("t" "待办" entry (file+headline "~/Documents/org/day.org" "待办") "* [要事] %^{要事}%?\n  创建时间: %U") org-capture-templates)
-     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* 今日时间\n** [今日待办] %?\n** [上午] 8:30-11:30\n   建议产出时间：150min\n\t- [ ] 规划10x\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x\n\t- [ ] 工作30x\n** [下午] 13:00-18:00\n   建议产出时间：240min\n\t- [ ] 规划10x\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x\n\t- [ ] 工作30x\n** [晚间] 19:00-23:30\n   建议产出时间：120min\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x") org-capture-templates))
+     (push '("d" "今日" entry (file+datetree "~/Documents/org/day.org") "* [今日待办] %?\n* [上午] 8:30-11:30\n  建议产出时间：150min\n\t- [ ] 规划10x\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x\n\t- [ ] 工作30x\n* [下午] 13:00-18:00\n  建议产出时间：240min\n\t- [ ] 规划10x\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x\n\t- [ ] 工作30x\n* [晚间] 19:00-23:30\n  建议产出时间：120min\n\t- [ ] 学习\n\t  * [ ] 视频40x\n\t  * [ ] 学习30x") org-capture-templates)
+     (push '("x" "假期" entry (file+datetree "~/Documents/org/day.org") "* [假期待办] %?\n") org-capture-templates))
 
 (use-package org-agenda
   :after org
